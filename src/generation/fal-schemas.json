@@ -1,0 +1,4355 @@
+{
+  "alibaba/happy-horse/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "image_url"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration": {
+        "type": "integer",
+        "enum": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "default": 5
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      }
+    }
+  },
+  "alibaba/happy-horse/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration": {
+        "type": "integer",
+        "enum": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "default": 5
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4"
+        ],
+        "default": "16:9"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      }
+    }
+  },
+  "alibaba/happy-horse/v1.1/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "image_url"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "integer",
+        "enum": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "default": 5
+      }
+    }
+  },
+  "alibaba/happy-horse/v1.1/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "duration": {
+        "type": "integer",
+        "enum": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "default": 5
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4",
+          "21:9",
+          "9:21",
+          "5:4",
+          "4:5"
+        ],
+        "default": "16:9"
+      }
+    }
+  },
+  "alibaba/qwen-image-3/edit": {
+    "category": "image-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_urls"
+    ],
+    "properties": {
+      "image_size": {},
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": true
+      },
+      "num_images": {
+        "type": "integer",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 6
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "output_format": {
+        "type": "string",
+        "enum": [
+          "jpeg",
+          "png",
+          "webp"
+        ],
+        "default": "png"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "image_urls": {
+        "type": "array",
+        "items": "string"
+      }
+    }
+  },
+  "alibaba/qwen-image-3/text-to-image": {
+    "category": "text-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": true
+      },
+      "num_images": {
+        "type": "integer",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 6
+      },
+      "negative_prompt": {
+        "type": "string"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "output_format": {
+        "type": "string",
+        "enum": [
+          "jpeg",
+          "png",
+          "webp"
+        ],
+        "default": "png"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "image_size": {
+        "default": "square_hd"
+      }
+    }
+  },
+  "alibaba/wan-3.0-prime/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "start_image_url"
+    ],
+    "properties": {
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": true
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "enable_thinking": {
+        "type": "boolean",
+        "default": false
+      },
+      "audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 30
+      },
+      "start_image_url": {
+        "type": "string"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "adaptive",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "adaptive"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "seed": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 2147483647
+      },
+      "end_image_url": {
+        "type": "string"
+      }
+    }
+  },
+  "alibaba/wan-3.0-prime/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": true
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "enable_thinking": {
+        "type": "boolean",
+        "default": false
+      },
+      "audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 30
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "adaptive",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "adaptive"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "seed": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 2147483647
+      }
+    }
+  },
+  "alibaba/wan-3.0/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "start_image_url"
+    ],
+    "properties": {
+      "start_image_url": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 30
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "adaptive",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "adaptive"
+      },
+      "audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": true
+      },
+      "enable_thinking": {
+        "type": "boolean",
+        "default": false
+      },
+      "seed": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 2147483647
+      }
+    }
+  },
+  "alibaba/wan-3.0/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "duration": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 30
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "adaptive",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "adaptive"
+      },
+      "audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "enable_thinking": {
+        "type": "boolean",
+        "default": false
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": true
+      },
+      "seed": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 2147483647
+      }
+    }
+  },
+  "blackforestlabs/flux-3/first-last-frame-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "start_image_url",
+      "end_image_url"
+    ],
+    "properties": {
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "2:1",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "start_image_url": {
+        "type": "string"
+      },
+      "safety_tolerance": {
+        "type": "integer",
+        "default": 2,
+        "minimum": 0,
+        "maximum": 4
+      },
+      "duration": {
+        "type": "integer",
+        "enum": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "default": 5
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "720p"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "end_image_url": {
+        "type": "string"
+      }
+    }
+  },
+  "blackforestlabs/flux-3/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "duration": {
+        "enum": [
+          "auto",
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "default": "auto"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "720p"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "safety_tolerance": {
+        "type": "integer",
+        "default": 2,
+        "minimum": 0,
+        "maximum": 4
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "2:1",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      }
+    }
+  },
+  "blackforestlabs/flux-3/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "duration": {
+        "enum": [
+          "auto",
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "default": "auto"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "720p"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "safety_tolerance": {
+        "type": "integer",
+        "default": 2,
+        "minimum": 0,
+        "maximum": 4
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "2:1",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      }
+    }
+  },
+  "bytedance/seedance-2.0/fast/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "auto"
+      },
+      "bitrate_mode": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "high"
+        ],
+        "default": "standard"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "end_user_id": {
+        "type": "string"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p"
+        ],
+        "default": "720p"
+      }
+    }
+  },
+  "bytedance/seedance-2.0/fast/reference-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "end_user_id": {
+        "type": "string"
+      },
+      "image_urls": {
+        "type": "array",
+        "items": "string",
+        "maxItems": 9
+      },
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "video_urls": {
+        "type": "array",
+        "items": "string",
+        "maxItems": 3
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "auto"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "bitrate_mode": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "high"
+        ],
+        "default": "standard"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p"
+        ],
+        "default": "720p"
+      },
+      "audio_urls": {
+        "type": "array",
+        "items": "string",
+        "maxItems": 3
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "bytedance/seedance-2.0/fast/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "auto"
+      },
+      "bitrate_mode": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "high"
+        ],
+        "default": "standard"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "end_user_id": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p"
+        ],
+        "default": "720p"
+      }
+    }
+  },
+  "bytedance/seedance-2.0/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "auto"
+      },
+      "bitrate_mode": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "high"
+        ],
+        "default": "standard"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "end_user_id": {
+        "type": "string"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p",
+          "4k"
+        ],
+        "default": "720p"
+      }
+    }
+  },
+  "bytedance/seedance-2.0/mini/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "auto"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "end_user_id": {
+        "type": "string"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p"
+        ],
+        "default": "720p"
+      }
+    }
+  },
+  "bytedance/seedance-2.0/mini/reference-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "image_urls": {
+        "type": "array",
+        "items": "string",
+        "maxItems": 9
+      },
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "video_urls": {
+        "type": "array",
+        "items": "string",
+        "maxItems": 3
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "auto"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p"
+        ],
+        "default": "720p"
+      },
+      "audio_urls": {
+        "type": "array",
+        "items": "string",
+        "maxItems": 3
+      },
+      "end_user_id": {
+        "type": "string"
+      }
+    }
+  },
+  "bytedance/seedance-2.0/mini/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "auto"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p"
+        ],
+        "default": "720p"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "end_user_id": {
+        "type": "string"
+      }
+    }
+  },
+  "bytedance/seedance-2.0/reference-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "end_user_id": {
+        "type": "string"
+      },
+      "image_urls": {
+        "type": "array",
+        "items": "string",
+        "maxItems": 9
+      },
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "video_urls": {
+        "type": "array",
+        "items": "string",
+        "maxItems": 3
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "auto"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "bitrate_mode": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "high"
+        ],
+        "default": "standard"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p",
+          "4k"
+        ],
+        "default": "720p"
+      },
+      "audio_urls": {
+        "type": "array",
+        "items": "string",
+        "maxItems": 3
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "bytedance/seedance-2.0/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "auto"
+      },
+      "bitrate_mode": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "high"
+        ],
+        "default": "standard"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "end_user_id": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p",
+          "4k"
+        ],
+        "default": "720p"
+      }
+    }
+  },
+  "bytedance/seedance-2.5/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "image_url"
+    ],
+    "properties": {
+      "aspect_ratio": {
+        "type": "string",
+        "default": "auto"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "draft": {
+        "type": "boolean",
+        "default": false
+      },
+      "bitrate_mode": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "high"
+        ],
+        "default": "standard"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "default": "720p"
+      },
+      "end_user_id": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "default": "auto"
+      }
+    }
+  },
+  "bytedance/seedance-2.5/reference-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [],
+    "properties": {
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "audio_urls": {
+        "type": "array",
+        "items": "string"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "draft": {
+        "type": "boolean",
+        "default": false
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "default": "720p"
+      },
+      "task": {
+        "type": "string",
+        "enum": [
+          "reference",
+          "editing",
+          "extension"
+        ],
+        "default": "reference"
+      },
+      "bitrate_mode": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "high"
+        ],
+        "default": "standard"
+      },
+      "image_urls": {
+        "type": "array",
+        "items": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "video_urls": {
+        "type": "array",
+        "items": "string"
+      },
+      "end_user_id": {
+        "type": "string"
+      },
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "default": "auto"
+      }
+    }
+  },
+  "bytedance/seedance-2.5/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "draft": {
+        "type": "boolean",
+        "default": false
+      },
+      "bitrate_mode": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "high"
+        ],
+        "default": "standard"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "default": "720p"
+      },
+      "end_user_id": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "codec": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "H264",
+          "H265"
+        ],
+        "default": "auto"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "default": "auto"
+      }
+    }
+  },
+  "fal-ai/flux-2-pro": {
+    "category": "text-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string",
+        "enum": [
+          "jpeg",
+          "png"
+        ],
+        "default": "jpeg"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "safety_tolerance": {
+        "type": "string",
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "default": "2"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "image_size": {
+        "default": "landscape_4_3"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/flux-2-pro/edit": {
+    "category": "image-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_urls"
+    ],
+    "properties": {
+      "image_urls": {
+        "type": "array",
+        "items": "string"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "output_format": {
+        "type": "string",
+        "enum": [
+          "jpeg",
+          "png"
+        ],
+        "default": "jpeg"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "safety_tolerance": {
+        "type": "string",
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "default": "2"
+      },
+      "image_size": {
+        "default": "auto"
+      }
+    }
+  },
+  "fal-ai/kling-video/o1/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "start_image_url"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "default": "5"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "start_image_url": {
+        "type": "string"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/o1/reference-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "default": "5"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "default": "16:9"
+      },
+      "image_urls": {
+        "type": "array",
+        "items": "string"
+      },
+      "elements": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/o3/standard/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "image_url"
+    ],
+    "properties": {
+      "image_url": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "shot_type": {
+        "type": "string",
+        "enum": [
+          "customize",
+          "intelligent"
+        ],
+        "default": "customize"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": false
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/o3/standard/reference-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [],
+    "properties": {
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "default": "16:9"
+      },
+      "elements": {
+        "type": "array",
+        "items": "object"
+      },
+      "shot_type": {
+        "type": "string",
+        "enum": [
+          "customize",
+          "intelligent"
+        ],
+        "default": "customize"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": false
+      },
+      "start_image_url": {
+        "type": "string"
+      },
+      "image_urls": {
+        "type": "array",
+        "items": "string"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/o3/standard/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [],
+    "properties": {
+      "generate_audio": {
+        "type": "boolean",
+        "default": false
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "default": "16:9"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "shot_type": {
+        "type": "string",
+        "enum": [
+          "customize",
+          "intelligent"
+        ],
+        "default": "customize"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v2.5-turbo/pro/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "cfg_scale": {
+        "type": "number",
+        "default": 0.5,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "5",
+          "10"
+        ],
+        "default": "5"
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": "blur, distort, and low quality"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "tail_image_url": {
+        "type": "string"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v2.5-turbo/pro/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "cfg_scale": {
+        "type": "number",
+        "default": 0.5,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "5",
+          "10"
+        ],
+        "default": "5"
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": "blur, distort, and low quality"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "default": "16:9"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v2.6/pro/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "start_image_url"
+    ],
+    "properties": {
+      "voice_ids": {
+        "type": "array",
+        "items": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "5",
+          "10"
+        ],
+        "default": "5"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": "blur, distort, and low quality"
+      },
+      "start_image_url": {
+        "type": "string"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v2.6/pro/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "cfg_scale": {
+        "type": "number",
+        "default": 0.5,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "5",
+          "10"
+        ],
+        "default": "5"
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": "blur, distort, and low quality"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "default": "16:9"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v3/4k/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "start_image_url"
+    ],
+    "properties": {
+      "cfg_scale": {
+        "type": "number",
+        "default": 0.5,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "elements": {
+        "type": "array",
+        "items": "object"
+      },
+      "shot_type": {
+        "type": "string",
+        "enum": [
+          "customize",
+          "intelligent"
+        ],
+        "default": "customize"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": "blur, distort, and low quality"
+      },
+      "start_image_url": {
+        "type": "string"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v3/4k/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [],
+    "properties": {
+      "cfg_scale": {
+        "type": "number",
+        "default": 0.5,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "default": "16:9"
+      },
+      "shot_type": {
+        "type": "string",
+        "enum": [
+          "customize",
+          "intelligent"
+        ],
+        "default": "customize"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": "blur, distort, and low quality"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v3/pro/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "start_image_url"
+    ],
+    "properties": {
+      "cfg_scale": {
+        "type": "number",
+        "default": 0.5,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "elements": {
+        "type": "array",
+        "items": "object"
+      },
+      "shot_type": {
+        "type": "string",
+        "enum": [
+          "customize",
+          "intelligent"
+        ],
+        "default": "customize"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": "blur, distort, and low quality"
+      },
+      "start_image_url": {
+        "type": "string"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v3/pro/motion-control": {
+    "category": "video-to-video",
+    "license": "commercial",
+    "required": [
+      "image_url",
+      "video_url",
+      "character_orientation"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "keep_original_sound": {
+        "type": "boolean",
+        "default": true
+      },
+      "character_orientation": {
+        "type": "string",
+        "enum": [
+          "image",
+          "video"
+        ]
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "elements": {
+        "type": "array",
+        "items": "object"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "video_url": {
+        "type": "string"
+      }
+    }
+  },
+  "fal-ai/kling-video/v3/pro/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [],
+    "properties": {
+      "cfg_scale": {
+        "type": "number",
+        "default": 0.5,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "default": "16:9"
+      },
+      "shot_type": {
+        "type": "string",
+        "enum": [
+          "customize",
+          "intelligent"
+        ],
+        "default": "customize"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": "blur, distort, and low quality"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v3/standard/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "start_image_url"
+    ],
+    "properties": {
+      "cfg_scale": {
+        "type": "number",
+        "default": 0.5,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "elements": {
+        "type": "array",
+        "items": "object"
+      },
+      "shot_type": {
+        "type": "string",
+        "enum": [
+          "customize",
+          "intelligent"
+        ],
+        "default": "customize"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": "blur, distort, and low quality"
+      },
+      "start_image_url": {
+        "type": "string"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v3/standard/motion-control": {
+    "category": "video-to-video",
+    "license": "commercial",
+    "required": [
+      "image_url",
+      "video_url",
+      "character_orientation"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "keep_original_sound": {
+        "type": "boolean",
+        "default": true
+      },
+      "character_orientation": {
+        "type": "string",
+        "enum": [
+          "image",
+          "video"
+        ]
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "elements": {
+        "type": "array",
+        "items": "object"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "video_url": {
+        "type": "string"
+      }
+    }
+  },
+  "fal-ai/kling-video/v3/standard/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [],
+    "properties": {
+      "cfg_scale": {
+        "type": "number",
+        "default": 0.5,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "default": "16:9"
+      },
+      "shot_type": {
+        "type": "string",
+        "enum": [
+          "customize",
+          "intelligent"
+        ],
+        "default": "customize"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": "blur, distort, and low quality"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v3/turbo/pro/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "image_url"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/kling-video/v3/turbo/pro/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [],
+    "properties": {
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "default": "5"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "default": "16:9"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": "object"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  "fal-ai/minimax/hailuo-2.3/standard/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "prompt_optimizer": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "6",
+          "10"
+        ],
+        "default": "6"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "prompt": {
+        "type": "string"
+      }
+    }
+  },
+  "fal-ai/minimax/hailuo-2.3/standard/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt_optimizer": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "6",
+          "10"
+        ],
+        "default": "6"
+      },
+      "prompt": {
+        "type": "string"
+      }
+    }
+  },
+  "fal-ai/pixverse/v6/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "360p",
+          "540p",
+          "720p",
+          "1080p"
+        ],
+        "default": "720p"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "thinking_type": {
+        "type": "string",
+        "enum": [
+          "enabled",
+          "disabled",
+          "auto"
+        ]
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "generate_audio_switch": {
+        "type": "boolean",
+        "default": false
+      },
+      "duration": {
+        "type": "integer",
+        "default": 5,
+        "minimum": 1,
+        "maximum": 15
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": ""
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "generate_multi_clip_switch": {
+        "type": "boolean",
+        "default": false
+      },
+      "style": {
+        "type": "string",
+        "enum": [
+          "anime",
+          "3d_animation",
+          "clay",
+          "comic",
+          "cyberpunk"
+        ]
+      }
+    }
+  },
+  "fal-ai/pixverse/v6/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "style": {
+        "type": "string",
+        "enum": [
+          "anime",
+          "3d_animation",
+          "clay",
+          "comic",
+          "cyberpunk"
+        ]
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "360p",
+          "540p",
+          "720p",
+          "1080p"
+        ],
+        "default": "720p"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "thinking_type": {
+        "type": "string",
+        "enum": [
+          "enabled",
+          "disabled",
+          "auto"
+        ]
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "generate_audio_switch": {
+        "type": "boolean",
+        "default": false
+      },
+      "duration": {
+        "type": "integer",
+        "default": 5,
+        "minimum": 1,
+        "maximum": 15
+      },
+      "negative_prompt": {
+        "type": "string",
+        "default": ""
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "generate_multi_clip_switch": {
+        "type": "boolean",
+        "default": false
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16",
+          "2:3",
+          "3:2",
+          "21:9"
+        ],
+        "default": "16:9"
+      }
+    }
+  },
+  "fal-ai/recraft/v4.1/text-to-image": {
+    "category": "text-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "background_color": {
+        "type": "object"
+      },
+      "image_size": {
+        "default": "square_hd"
+      },
+      "colors": {
+        "type": "array",
+        "default": [],
+        "items": "object"
+      }
+    }
+  },
+  "fal-ai/wan/v2.7/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "video_url": {
+        "type": "string"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "audio_url": {
+        "type": "string"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "integer",
+        "enum": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "default": 5
+      },
+      "negative_prompt": {
+        "type": "string"
+      }
+    }
+  },
+  "fal-ai/wan/v2.7/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "integer",
+        "enum": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "default": 5
+      },
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": true
+      },
+      "audio_url": {
+        "type": "string"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4"
+        ],
+        "default": "16:9"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string"
+      }
+    }
+  },
+  "fal-ai/z-image/turbo": {
+    "category": "text-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "num_images": {
+        "type": "integer",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 4
+      },
+      "output_format": {
+        "type": "string",
+        "enum": [
+          "jpeg",
+          "png",
+          "webp"
+        ],
+        "default": "png"
+      },
+      "image_size": {
+        "default": "landscape_4_3"
+      },
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": false
+      },
+      "num_inference_steps": {
+        "type": "integer",
+        "default": 8,
+        "minimum": 1,
+        "maximum": 8
+      },
+      "acceleration": {
+        "type": "string",
+        "enum": [
+          "none",
+          "regular",
+          "high"
+        ],
+        "default": "regular"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "seed": {
+        "type": "integer"
+      }
+    }
+  },
+  "fal-ai/z-image/turbo/image-to-image": {
+    "category": "image-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "num_images": {
+        "type": "integer",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 4
+      },
+      "output_format": {
+        "type": "string",
+        "enum": [
+          "jpeg",
+          "png",
+          "webp"
+        ],
+        "default": "png"
+      },
+      "image_size": {
+        "default": "auto"
+      },
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": false
+      },
+      "num_inference_steps": {
+        "type": "integer",
+        "default": 8,
+        "minimum": 1,
+        "maximum": 8
+      },
+      "acceleration": {
+        "type": "string",
+        "enum": [
+          "none",
+          "regular",
+          "high"
+        ],
+        "default": "regular"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "strength": {
+        "type": "number",
+        "default": 0.6,
+        "maximum": 1
+      },
+      "seed": {
+        "type": "integer"
+      }
+    }
+  },
+  "ideogram/v4": {
+    "category": "text-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "rendering_speed": {
+        "type": "string",
+        "enum": [
+          "TURBO",
+          "BALANCED",
+          "QUALITY"
+        ],
+        "default": "BALANCED"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string",
+        "enum": [
+          "jpeg",
+          "png"
+        ],
+        "default": "jpeg"
+      },
+      "num_images": {
+        "type": "integer",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 4
+      },
+      "image_size": {
+        "default": "square_hd"
+      },
+      "expansion_model": {
+        "type": "string",
+        "enum": [
+          "None",
+          "Medium",
+          "Large"
+        ],
+        "default": "Medium"
+      },
+      "acceleration": {
+        "type": "string",
+        "enum": [
+          "none",
+          "low",
+          "regular",
+          "high"
+        ],
+        "default": "none"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "seed": {
+        "type": "integer"
+      }
+    }
+  },
+  "ideogram/v4/image-to-image": {
+    "category": "image-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "rendering_speed": {
+        "type": "string",
+        "enum": [
+          "TURBO",
+          "BALANCED",
+          "QUALITY"
+        ],
+        "default": "BALANCED"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "output_format": {
+        "type": "string",
+        "enum": [
+          "jpeg",
+          "png"
+        ],
+        "default": "jpeg"
+      },
+      "num_images": {
+        "type": "integer",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 4
+      },
+      "image_size": {
+        "default": "auto"
+      },
+      "expansion_model": {
+        "type": "string",
+        "enum": [
+          "None",
+          "Medium",
+          "Large"
+        ],
+        "default": "Medium"
+      },
+      "strength": {
+        "type": "number",
+        "default": 0.8,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "acceleration": {
+        "type": "string",
+        "enum": [
+          "none",
+          "low",
+          "regular",
+          "high"
+        ],
+        "default": "none"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "seed": {
+        "type": "integer"
+      }
+    }
+  },
+  "lightricks/ltx-2.5/image-to-video/fast": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "image_url": {
+        "type": "string"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "camera_motion": {
+        "type": "string",
+        "enum": [
+          "dolly_in",
+          "dolly_out",
+          "dolly_left",
+          "dolly_right",
+          "jib_up",
+          "jib_down",
+          "static",
+          "focus_shift"
+        ]
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "enum": [
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          "auto"
+        ],
+        "default": "auto"
+      },
+      "fps": {
+        "type": "integer",
+        "enum": [
+          24,
+          25,
+          48,
+          50
+        ],
+        "default": 25
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "16:9",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p",
+          "1440p",
+          "2160p"
+        ],
+        "default": "1080p"
+      }
+    }
+  },
+  "lightricks/ltx-2.5/image-to-video/pro": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "image_url": {
+        "type": "string"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "camera_motion": {
+        "type": "string",
+        "enum": [
+          "dolly_in",
+          "dolly_out",
+          "dolly_left",
+          "dolly_right",
+          "jib_up",
+          "jib_down",
+          "static",
+          "focus_shift"
+        ]
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "duration": {
+        "enum": [
+          6,
+          8,
+          10,
+          "auto"
+        ],
+        "default": "auto"
+      },
+      "fps": {
+        "type": "integer",
+        "enum": [
+          24,
+          25,
+          50
+        ],
+        "default": 25
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "16:9",
+          "9:16"
+        ],
+        "default": "auto"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      }
+    }
+  },
+  "lightricks/ltx-2.5/text-to-video/fast": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "duration": {
+        "enum": [
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          "auto"
+        ],
+        "default": "auto"
+      },
+      "fps": {
+        "type": "integer",
+        "enum": [
+          24,
+          25,
+          48,
+          50
+        ],
+        "default": 25
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "default": "16:9"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p",
+          "1440p",
+          "2160p"
+        ],
+        "default": "1080p"
+      },
+      "camera_motion": {
+        "type": "string",
+        "enum": [
+          "dolly_in",
+          "dolly_out",
+          "dolly_left",
+          "dolly_right",
+          "jib_up",
+          "jib_down",
+          "static",
+          "focus_shift"
+        ]
+      },
+      "prompt": {
+        "type": "string"
+      }
+    }
+  },
+  "lightricks/ltx-2.5/text-to-video/pro": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "duration": {
+        "enum": [
+          6,
+          8,
+          10,
+          "auto"
+        ],
+        "default": "auto"
+      },
+      "fps": {
+        "type": "integer",
+        "enum": [
+          24,
+          25,
+          50
+        ],
+        "default": 25
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "default": "16:9"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "camera_motion": {
+        "type": "string",
+        "enum": [
+          "dolly_in",
+          "dolly_out",
+          "dolly_left",
+          "dolly_right",
+          "jib_up",
+          "jib_down",
+          "static",
+          "focus_shift"
+        ]
+      },
+      "prompt": {
+        "type": "string"
+      }
+    }
+  },
+  "minimax/h3/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480P",
+          "768P",
+          "2K",
+          "4K"
+        ],
+        "default": "2K"
+      },
+      "end_image_url": {
+        "type": "string"
+      },
+      "target_audio_url": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "integer",
+        "default": 5,
+        "minimum": 5,
+        "maximum": 15
+      },
+      "prompt_expansion_mode": {
+        "type": "string"
+      }
+    }
+  },
+  "minimax/h3/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "default": "16:9"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480P",
+          "768P",
+          "2K",
+          "4K"
+        ],
+        "default": "2K"
+      },
+      "target_audio_url": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "integer",
+        "default": 5,
+        "minimum": 5,
+        "maximum": 15
+      },
+      "prompt_expansion_mode": {
+        "type": "string"
+      }
+    }
+  },
+  "wan/v2.6/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "audio_url": {
+        "type": "string"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "image_url": {
+        "type": "string"
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "multi_shots": {
+        "type": "boolean",
+        "default": false
+      },
+      "negative_prompt": {
+        "type": "string"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "5",
+          "10",
+          "15"
+        ],
+        "default": "5"
+      }
+    }
+  },
+  "wan/v2.6/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "default": "1080p"
+      },
+      "duration": {
+        "type": "string",
+        "enum": [
+          "5",
+          "10",
+          "15"
+        ],
+        "default": "5"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4"
+        ],
+        "default": "16:9"
+      },
+      "seed": {
+        "type": "integer"
+      },
+      "enable_prompt_expansion": {
+        "type": "boolean",
+        "default": true
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "audio_url": {
+        "type": "string"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "multi_shots": {
+        "type": "boolean",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string"
+      }
+    }
+  },
+  "xai/grok-imagine-image/v2.0/edit": {
+    "category": "image-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "num_images": {
+        "type": "integer",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 4
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "1k",
+          "2k"
+        ],
+        "default": "1k"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "2:1",
+          "20:9",
+          "19.5:9",
+          "16:9",
+          "4:3",
+          "3:2",
+          "1:1",
+          "2:3",
+          "3:4",
+          "9:16",
+          "9:19.5",
+          "9:20",
+          "1:2"
+        ],
+        "default": "auto"
+      },
+      "quality": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium"
+        ],
+        "default": "medium"
+      },
+      "output_format": {
+        "type": "string",
+        "enum": [
+          "jpeg",
+          "png",
+          "webp"
+        ],
+        "default": "jpeg"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "image_urls": {
+        "type": "array",
+        "items": "string"
+      }
+    }
+  },
+  "xai/grok-imagine-image/v2.0/text-to-image": {
+    "category": "text-to-image",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "num_images": {
+        "type": "integer",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 4
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "1k",
+          "2k"
+        ],
+        "default": "1k"
+      },
+      "sync_mode": {
+        "type": "boolean",
+        "default": false
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "2:1",
+          "20:9",
+          "19.5:9",
+          "16:9",
+          "4:3",
+          "3:2",
+          "1:1",
+          "2:3",
+          "3:4",
+          "9:16",
+          "9:19.5",
+          "9:20",
+          "1:2"
+        ],
+        "default": "1:1"
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "quality": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium"
+        ],
+        "default": "medium"
+      },
+      "output_format": {
+        "type": "string",
+        "enum": [
+          "jpeg",
+          "png",
+          "webp"
+        ],
+        "default": "jpeg"
+      },
+      "prompt": {
+        "type": "string"
+      }
+    }
+  },
+  "xai/grok-imagine-video/v1.5/image-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration": {
+        "type": "integer",
+        "default": 6,
+        "minimum": 1,
+        "maximum": 15
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "default": "720p"
+      },
+      "prompt": {
+        "type": "string"
+      },
+      "image_url": {
+        "type": "string"
+      }
+    }
+  },
+  "xai/grok-imagine-video/v1.5/reference-to-video": {
+    "category": "image-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt",
+      "reference_image_urls"
+    ],
+    "properties": {
+      "reference_image_urls": {
+        "type": "array",
+        "items": "string",
+        "maxItems": 7
+      },
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration": {
+        "type": "integer",
+        "default": 8,
+        "minimum": 1,
+        "maximum": 15
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p"
+        ],
+        "default": "480p"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "4:3",
+          "3:2",
+          "1:1",
+          "2:3",
+          "3:4",
+          "9:16"
+        ],
+        "default": "16:9"
+      },
+      "prompt": {
+        "type": "string"
+      }
+    }
+  },
+  "xai/grok-imagine-video/v1.5/text-to-video": {
+    "category": "text-to-video",
+    "license": "commercial",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "enable_safety_checker": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration": {
+        "type": "integer",
+        "default": 6,
+        "minimum": 1,
+        "maximum": 15
+      },
+      "resolution": {
+        "type": "string",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "default": "720p"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "enum": [
+          "16:9",
+          "4:3",
+          "3:2",
+          "1:1",
+          "2:3",
+          "3:4",
+          "9:16"
+        ],
+        "default": "16:9"
+      },
+      "prompt": {
+        "type": "string"
+      }
+    }
+  }
+}

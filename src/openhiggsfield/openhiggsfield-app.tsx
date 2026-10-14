@@ -143,18 +143,17 @@ function failedRows(requestId: string, count: number, draft: RunDraft, error: st
 }
 
 function failureText(status: GenerationStatus): string {
-  if (status.status === "nsfw") return "the platform flagged the result as NSFW";
-  if (status.status === "canceled") return "the run was canceled";
+  if (status.status === "nsfw") return "the content filter blocked this result";
   if (typeof status.error === "string" && status.error) return status.error;
-  return "the platform reported a failure";
+  return "fal reported a failure";
 }
 
 function describeError(caught: unknown): string {
   const message = caught instanceof Error ? caught.message : String(caught);
-  if (caught instanceof MissingCredentialsError || message.includes("Missing platform key")) {
-    return "Add your platform key to generate.";
+  if (caught instanceof MissingCredentialsError || message.includes("Missing fal API key")) {
+    return "Add your fal API key to generate.";
   }
-  return `Generation failed — ${message}. Try again; if it repeats, check the key in the sidebar.`;
+  return `Generation failed — ${message}.`;
 }
 
 export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: string }) {
@@ -274,7 +273,7 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
       } catch (caught) {
         if (!alive.current) return;
         const message = describeError(caught);
-        if (message.includes("platform key")) setKeysOpen(true);
+        if (message.includes("API key")) setKeysOpen(true);
         setHistory((prev) => {
           const next = replaceRequest(prev, requestId, failedRows(requestId, expected, draft, message));
           void saveHistory(next);
@@ -326,7 +325,7 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
   const generate = useCallback(async () => {
     if (!keyConfigured) {
       setKeysOpen(true);
-      setError("Add your platform key to generate.");
+      setError("Add your fal API key to generate.");
       return;
     }
     const plane = assemblePlane();
@@ -380,6 +379,7 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
     const runOne = async (slot: { skeletons: string[] }) => {
       try {
         const queued = await submitGeneration(plane);
+        if (!queued.ok) throw new Error(queued.error);
         setHistory((prev) => {
           const next = [...runningRows(queued.requestId, slot.skeletons.length, draft), ...prev];
           void saveHistory(next);
@@ -390,7 +390,7 @@ export function OpenHiggsfieldApp({ fontClassName = "" }: { fontClassName?: stri
       } catch (caught) {
         if (!alive.current) return;
         const message = describeError(caught);
-        if (message.includes("platform key")) setKeysOpen(true);
+        if (message.includes("API key")) setKeysOpen(true);
         setError((prev) => prev ?? message);
       } finally {
         if (alive.current) {

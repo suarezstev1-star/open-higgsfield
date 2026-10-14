@@ -10,7 +10,7 @@ export const PLATFORM_KEY_COOKIE_OPTIONS = {
 
 export class MissingCredentialsError extends Error {
   constructor() {
-    super("Missing platform key");
+    super("Missing fal API key");
     this.name = "MissingCredentialsError";
   }
 }

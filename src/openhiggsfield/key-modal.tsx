@@ -74,7 +74,7 @@ export function KeyModal({
             <p className="ohf-keys-copy">
               {configured
                 ? "A key is saved in this browser. Enter a new id:secret pair to replace it."
-                : "Paste your platform key as id:secret. It stays in an httpOnly cookie and is sent as Authorization: Key id:secret."}
+                : "Paste your fal API key (key_id:key_secret, from fal.ai/dashboard/keys). It stays in an httpOnly cookie on this server and is only sent to fal."}
             </p>
           </div>
           <button type="button" className="ohf-icon-btn" aria-label="Close" onClick={onClose}>

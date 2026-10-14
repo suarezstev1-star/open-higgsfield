@@ -1,7 +1,7 @@
 # OpenHiggsfield AI — Open-Source Alternative to Higgsfield AI
 
 > **The free, open-source alternative to Higgsfield AI.** Generate images and
-> videos with 38 models from one prompt bar — no closed ecosystem, no studio
+> videos with 33 models on fal.ai from one prompt bar — no closed ecosystem, no studio
 > subscription.
 
 ## 🌐 Try it Online — No Install Required
@@ -9,7 +9,7 @@
 **Hosted version:** [openhiggsfield.ai](https://openhiggsfield.ai)
 
 Image and Video in one studio, in the browser — no Node.js, no setup. Add your
-platform key (`id:secret`) to start generating. The studio itself is free.
+fal API key (`key_id:key_secret`) to start generating. The studio itself is free.
 
 ---
 
@@ -17,8 +17,8 @@ platform key (`id:secret`) to start generating. The studio itself is free.
 
 - **Free & open-source** — no studio subscription, no vendor lock-in
 - **Self-hosted** — clone it, run it, change it
-- **Your key** — generate with your own platform key
-- **38 models** — 8 image, 30 video, one catalog, one composer
+- **Your key** — generate with your own fal.ai key
+- **33 models** — 7 image, 26 video, one catalog, one composer
 
 ---
 
@@ -32,8 +32,8 @@ Next.js 16 App Router on Vercel · React 19 · plain CSS · Zustand · pnpm
 
 - **One composer for Image and Video.** A single prompt bar drives both; the
   model you pick decides image or video. `⌘/Ctrl + Enter` submits.
-- **38 models in the catalog** — 8 image, 30 video: Soul 2, Soul Cinema, Seedance
-  2.5 (Edit / Extend), Seedance 2.0 (Fast / Mini), Kling 3 (Turbo / Std / Pro / 4K / Motion), Wan, Flux,
+- **33 models in the catalog**, all served by fal.ai — 7 image, 26 video: Seedance
+  2.5, Seedance 2.0 (Fast / Mini), Kling 3 (Turbo / Std / Pro / 4K / Motion), Wan, Flux,
   Ideogram, Recraft, LTX, MiniMax, PixVerse, Grok, Qwen and more. Searchable
   picker.
 - **Per-model settings.** Aspect ratio, resolution, duration, output format,
@@ -75,7 +75,7 @@ Next.js 16 App Router on Vercel · React 19 · plain CSS · Zustand · pnpm
   generation platform, so old history can outlive its CDN lifetime and show gaps.
 - **Failed, NSFW and canceled runs** are recorded as failed tiles carrying the
   reason and a retry that restores the prompt and model.
-- **Your own platform key.** Entered in a modal, stored by a server action in an
+- **Your own fal key.** Entered in a modal, stored by a server action in an
   httpOnly cookie. A missing key opens the modal — it never fails silently. The
   topbar lamp states whether a key is held and whether a run is in flight.
 
@@ -86,11 +86,18 @@ Next.js 16 App Router on Vercel · React 19 · plain CSS · Zustand · pnpm
 Each generate is one object: `{ model, prompt, media, settings }`.
 
 - **The UI builds that object** and hands it to a server action. The action
-  resolves it against the catalog and maps it to the generation API's own
-  fields (`image_urls`, `aspect_ratio`, …).
-- **Server actions are the only caller.** The browser never talks to the
-  generation API. Submit is `POST /{model}`; status is
-  `GET /requests/{id}/status`. Auth is `Authorization: Key <api_key>`.
+  resolves it against the catalog, picks the fal endpoint for the media the run
+  carries (text, start frame, first/last frame, references, motion) and maps it
+  to that endpoint's own fields (`image_url`, `start_image_url`, `image_urls`, …)
+  in the types its schema declares.
+- **Server actions are the only caller.** The browser never talks to fal.
+  Submit is `POST https://queue.fal.run/{endpoint}`; status and result are read
+  from the owning app at `/{owner}/{app}/requests/{id}/status` and
+  `/{owner}/{app}/requests/{id}`. Auth is `Authorization: Key <key_id:key_secret>`.
+- **Every endpoint's input schema is snapshotted** in
+  `src/generation/fal-schemas.json` (`pnpm fal:schemas`), and `pnpm fal:check`
+  proves that every media combination and setting value the studio offers is
+  accepted by the endpoint it reaches.
 - **The catalog is the source of truth** (`src/generation/catalog/`). A new entry
   appears in the picker, brings its own settings rail and media roles, and needs
   no studio changes.
@@ -108,12 +115,14 @@ pnpm install
 pnpm dev            # http://localhost:3000
 ```
 
-Open the studio, press **Add key**, and paste your platform key as `id:secret`.
+Open the studio, press **Add key**, and paste your fal key as `key_id:key_secret`
+(create one at fal.ai/dashboard/keys), or set `FAL_KEY` on the server.
 
 ### Environment
 
 ```bash
-HF_API_BASE_URL=                      # generation API origin, server only
+FAL_KEY=                              # optional server-side fal key; private deployments only until accounts and credits exist
+FAL_QUEUE_URL=                        # optional, defaults to https://queue.fal.run
 OPEN_HIGGSFIELD_READ_WRITE_TOKEN=     # Vercel Blob read-write token
 ```
 
@@ -125,6 +134,8 @@ OPEN_HIGGSFIELD_READ_WRITE_TOKEN=     # Vercel Blob read-write token
 | `pnpm build` | Production build |
 | `pnpm start` | Serve the production build |
 | `pnpm brand` | Rebuild the icons and OG card in `public/` |
+| `pnpm fal:schemas` | Refresh the fal input-schema snapshot for every catalog endpoint |
+| `pnpm fal:check` | Check the catalog against the snapshot |
 
 ---
 

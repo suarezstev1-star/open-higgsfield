@@ -14,6 +14,11 @@ export const seedance2: ModelEntry = {
   surface: "video",
   label: "Seedance 2.0",
   roles: seedanceRoles,
+  endpoints: {
+    text: "bytedance/seedance-2.0/text-to-video",
+    image: "bytedance/seedance-2.0/image-to-video",
+    reference: "bytedance/seedance-2.0/reference-to-video",
+  },
   settings: {
     ...seedanceSettings,
     resolution: { type: "enum", values: ["480p", "720p", "1080p", "4k"], default: "720p" },
@@ -25,6 +30,11 @@ export const seedance2Fast: ModelEntry = {
   surface: "video",
   label: "Seedance 2.0 Fast",
   roles: seedanceRoles,
+  endpoints: {
+    text: "bytedance/seedance-2.0/fast/text-to-video",
+    image: "bytedance/seedance-2.0/fast/image-to-video",
+    reference: "bytedance/seedance-2.0/fast/reference-to-video",
+  },
   settings: {
     ...seedanceSettings,
     resolution: { type: "enum", values: ["480p", "720p"], default: "720p" },
@@ -36,6 +46,11 @@ export const seedance2Mini: ModelEntry = {
   surface: "video",
   label: "Seedance 2.0 Mini",
   roles: seedanceRoles,
+  endpoints: {
+    text: "bytedance/seedance-2.0/mini/text-to-video",
+    image: "bytedance/seedance-2.0/mini/image-to-video",
+    reference: "bytedance/seedance-2.0/mini/reference-to-video",
+  },
   settings: {
     ...seedanceSettings,
     resolution: { type: "enum", values: ["480p", "720p"], default: "720p" },

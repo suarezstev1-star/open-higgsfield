@@ -2,16 +2,14 @@ import type { ModelEntry } from "./types";
 
 const klingTurboSettings = {
   aspectRatio: { type: "enum", values: ["16:9", "9:16", "1:1"], default: "16:9" },
-  resolution: { type: "enum", values: ["720p", "1080p"], default: "720p" },
   duration: { type: "range", min: 3, max: 15, default: 5 },
 } as const satisfies ModelEntry["settings"];
 
 const kling3Settings = {
   aspectRatio: { type: "enum", values: ["16:9", "9:16", "1:1"], default: "16:9" },
   duration: { type: "range", min: 3, max: 15, default: 5 },
-  sound: { type: "boolean", default: true },
+  generateAudio: { type: "boolean", default: true },
   cfgScale: { type: "range", min: 0, max: 1, default: 0.5, step: 0.01 },
-  multiShots: { type: "boolean", default: false },
 } as const satisfies ModelEntry["settings"];
 
 const klingMotionSettings = {
@@ -25,6 +23,10 @@ export const kling3Turbo: ModelEntry = {
   label: "Kling 3.0 Turbo",
   roles: { start: 1 },
   settings: klingTurboSettings,
+  endpoints: {
+    text: "fal-ai/kling-video/v3/turbo/pro/text-to-video",
+    image: "fal-ai/kling-video/v3/turbo/pro/image-to-video",
+  },
 };
 
 export const kling3Std: ModelEntry = {
@@ -33,6 +35,10 @@ export const kling3Std: ModelEntry = {
   label: "Kling 3.0 Standard",
   roles: { start: 1, end: 1 },
   settings: kling3Settings,
+  endpoints: {
+    text: "fal-ai/kling-video/v3/standard/text-to-video",
+    image: "fal-ai/kling-video/v3/standard/image-to-video",
+  },
 };
 
 export const kling3Pro: ModelEntry = {
@@ -41,6 +47,10 @@ export const kling3Pro: ModelEntry = {
   label: "Kling 3.0 Pro",
   roles: { start: 1, end: 1 },
   settings: kling3Settings,
+  endpoints: {
+    text: "fal-ai/kling-video/v3/pro/text-to-video",
+    image: "fal-ai/kling-video/v3/pro/image-to-video",
+  },
 };
 
 export const kling34k: ModelEntry = {
@@ -49,6 +59,10 @@ export const kling34k: ModelEntry = {
   label: "Kling 3.0 4K",
   roles: { start: 1, end: 1 },
   settings: kling3Settings,
+  endpoints: {
+    text: "fal-ai/kling-video/v3/4k/text-to-video",
+    image: "fal-ai/kling-video/v3/4k/image-to-video",
+  },
 };
 
 export const kling3MotionStd: ModelEntry = {
@@ -57,6 +71,7 @@ export const kling3MotionStd: ModelEntry = {
   label: "Kling 3.0 Motion Control",
   roles: { start: 1, video: 1 },
   settings: klingMotionSettings,
+  endpoints: { motion: "fal-ai/kling-video/v3/standard/motion-control" },
 };
 
 export const kling3MotionPro: ModelEntry = {
@@ -65,4 +80,5 @@ export const kling3MotionPro: ModelEntry = {
   label: "Kling 3.0 Motion Control Pro",
   roles: { start: 1, video: 1 },
   settings: klingMotionSettings,
+  endpoints: { motion: "fal-ai/kling-video/v3/pro/motion-control" },
 };
