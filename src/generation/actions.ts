@@ -12,9 +12,15 @@ import {
   encodeCredentials,
   parseCredentialInput,
 } from "./credentials";
-import { createPlatformClient } from "./platform";
-import type { StatusResult } from "./platform";
-import { toPlatform } from "./to-platform";
+import { DEFAULT_FAL_QUEUE_URL, PlatformError, createPlatformClient } from "./platform";
+import type { QueuedGeneration, StatusResult } from "./platform";
+import { UnsupportedRequestError, toFal } from "./to-fal";
+
+/** Next strips the message from errors a server action throws in production,
+    so failures the visitor can act on travel back as data. */
+export type SubmitResult =
+  | ({ ok: true } & QueuedGeneration)
+  | { ok: false; error: string };
 
 export async function savePlatformCredentials(data: unknown) {
   const { apiKey } = parseCredentialInput(data);
@@ -28,17 +34,30 @@ export async function clearPlatformCredentials() {
 }
 
 export async function hasPlatformCredentials() {
-  return (await readStoredCredentials()) !== null;
+  return (await readStoredCredentials()) !== null || serverKey() !== null;
 }
 
-export async function submitGeneration(plane: GenerationPlane) {
-  const model = getModel(plane.model);
-  const parsed: GenerationPlane = {
-    ...plane,
-    settings: parseSettings(model, plane.settings),
-  };
-  const { path, body } = toPlatform(parsed);
-  return createPlatformClient(await readCredentials()).submit(path, body);
+export async function submitGeneration(plane: GenerationPlane): Promise<SubmitResult> {
+  try {
+    const model = getModel(plane.model);
+    const parsed: GenerationPlane = {
+      ...plane,
+      settings: parseSettings(model, plane.settings),
+    };
+    const { endpoint, body } = toFal(parsed);
+    const queued = await createPlatformClient(await readCredentials()).submit(endpoint, body);
+    return { ok: true, ...queued };
+  } catch (caught) {
+    if (caught instanceof MissingCredentialsError) return { ok: false, error: caught.message };
+    if (caught instanceof PlatformError && (caught.status === 401 || caught.status === 403)) {
+      return { ok: false, error: "fal rejected the API key" };
+    }
+    if (caught instanceof UnsupportedRequestError || caught instanceof PlatformError) {
+      return { ok: false, error: caught.message };
+    }
+    console.error("[generate] submit failed", caught);
+    return { ok: false, error: "the request could not be sent" };
+  }
 }
 
 /** Every request in flight, answered in one round trip. Next dispatches server
@@ -64,12 +83,18 @@ async function readStoredCredentials() {
   return decodeCredentials(jar.get(PLATFORM_KEY_COOKIE)?.value);
 }
 
+/** The visitor's own key wins; `FAL_KEY` lets the operator generate without
+    pasting one. Until accounts and credits exist, a deployment with `FAL_KEY`
+    set lets every visitor spend on that key — keep it to private deployments. */
 async function readCredentials() {
-  const stored = await readStoredCredentials();
+  const stored = (await readStoredCredentials()) ?? serverKey();
   if (!stored) throw new MissingCredentialsError();
-  const baseUrl = process.env.HF_API_BASE_URL;
-  if (!baseUrl) throw new Error("Missing HF_API_BASE_URL");
-  return { ...stored, baseUrl };
+  return { ...stored, baseUrl: process.env.FAL_QUEUE_URL || DEFAULT_FAL_QUEUE_URL };
+}
+
+function serverKey(): { apiKey: string } | null {
+  const apiKey = process.env.FAL_KEY?.trim();
+  return apiKey ? { apiKey } : null;
 }
 
 function parseRequestIds(data: unknown): string[] {

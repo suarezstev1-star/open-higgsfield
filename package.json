@@ -6,7 +6,9 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
-    "brand": "node scripts/build-brand-assets.mjs"
+    "brand": "node scripts/build-brand-assets.mjs",
+    "fal:schemas": "node scripts/fal-schemas.mjs",
+    "fal:check": "node scripts/fal-schemas.mjs --check && tsx scripts/check-fal-catalog.ts"
   },
   "dependencies": {
     "@tanstack/react-virtual": "^3.14.10",
@@ -20,6 +22,7 @@
     "@types/node": "^22.10.2",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "tsx": "4.20.6",
     "typescript": "^5.9.2"
   }
 }
