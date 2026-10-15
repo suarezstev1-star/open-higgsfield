@@ -68,6 +68,3 @@ pnpm dev   # http://localhost:3000
 2. Descarga el HTML de `https://higgsfield.ai/` y rastrea los chunks `assets.higgsfield.ai/tanstack/assets/868a8dba-*.js` siguiendo los imports.
 3. Analiza solo los chunks propios (los que mencionan `higgsfield.ai` o `fnf`) con `npx rea-agents analyze-javascript-application <dir> --json`. Con el sitio entero (~8.000 archivos) tarda horas.
 4. Haz el análisis dirigido con grep y scripts. Los informes de `docs/research/higgsfield/` explican qué buscar.
-
-## 6. Siguiente investigación propuesta
-Clonación de voz (ElevenLabs, con Chatterbox como alternativa abierta). Ver `docs/NEXT-voice-cloning.md`, que incluye el mensaje listo para pegar en el chat nuevo.
