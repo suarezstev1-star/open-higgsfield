@@ -108,6 +108,12 @@ Each generate is one object: `{ model, prompt, media, settings }`.
 
 ---
 
+## Project docs
+
+- `docs/HANDOFF.md` — current state, roadmap and how to resume.
+- `docs/research/higgsfield/` — static reverse-engineering notes on higgsfield.ai.
+- `docs/NEXT-voice-cloning.md` — next research brief (voice cloning).
+
 ## Getting started
 
 ```bash
