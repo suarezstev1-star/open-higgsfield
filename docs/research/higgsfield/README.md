@@ -15,6 +15,12 @@ Cada afirmación de los informes está marcada como **OBSERVADO** (cita el chunk
 | `03-auth-billing.md` | Clerk, workspaces y roles, planes, Stripe, créditos, telemetría, feature flags |
 | `04-agents-mcp-canvas.md` | Arquitectura del frontend, agente Supercomputer, servidor MCP, canvas y colaboración, comunidad |
 | `05-apps.md` | Inventario de las ~95 apps internas (motor de plantillas `/workflows` + apps con endpoint propio) |
+| `06-soul-identidad.md` | Soul ID (entrenamiento de identidad), Reference Elements, Kling elements, character sheets y cómo recrearlo con fal |
+| `06b-soul-modelo-base.md` | Qué modelo base usa Soul (investigación pública) y por qué Soul ID es un LoRA; equivalentes en fal |
+| `07-genjutsu-clonacion-video.md` | Genjutsu (`hf_mult_*`, restyle), Ad Multiplier, Katana (handoff a claude.ai), clonación de video (Kling MC, Recast, face swap, lipsync), editor Fable y cómo recrearlo con fal |
+| `08-avatares-ai-influencer.md` | AI Influencer Studio (catálogo de rasgos, reglas del aleatorio, tiers/animales), avatares, AI Host, Faceless, Shorts, Photodump, y el pipeline viral |
+| `09-composicion-y-prompts.md` | Cómo se componen los videos (Cinema Studio, multi-shot, `/chains/*`, Reels, AI Host, canvas, post-producción) y cómo se construyen los prompts; propuesta para recrearlo con Next.js + fal |
+| `10-plantillas-reels.md` | Las 5 familias de plantillas de reel (Viral Hub code-based, efectos GLSL, plantillas de servidor, apps-cadena, Reels Studio) y cómo recrearlas |
 | `data/endpoints-uniq.tsv` | Servicio, ruta, método y chunk de cada endpoint encontrado |
 | `data/route-chunks.tsv`, `data/routemap.tsv` | Ruta de la web y chunk que la implementa |
 
